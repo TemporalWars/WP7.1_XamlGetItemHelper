@@ -1,0 +1,35 @@
+<div class="wikidoc">
+<p><strong>Windows Phone 7.1 Xaml Get-Item Helper Assembly</strong><br>
+<a href="http://temporalwars.com/CodeHelpers/WpXamlGetItem">http://temporalwars.com/CodeHelpers/WpXamlGetItem</a><br>
+<br>
+This WP7.1 XamlHelper assembly is used to retrieve visual-items from collections generated using data-templates, using .Net ItemContainerGenerator method.<br>
+<br>
+This is another new WP7.1 assembly used to help ease development on Windows Phone. I will be adding additional WP7.1 assemblies in the near future.<br>
+<br>
+I use a default namespace string for all helper assemblies, making it easier to organize and locate assemblies within projects. Each helper assembly will be marked with the following default namespace: &quot;BenScharbach.WP7.Helpers&quot;, with the actual namespace's
+ specific name at the end of the default namespace; for example, 'Xaml.GetItem' for this assembly.<br>
+<br>
+The Xaml Get-Item assembly is used to locate some UiElement located within an ItemsControl. For example, the UiElement might be a TextBlock named
+<em>MyTextBlock</em> which is located in a DataTemplate. To complicate the visual-tree search, the DataTemplate might be stored in the Resources section of some other xaml item, like the Grid. Using the
+<strong>FindCollectionVisualItem</strong>&lt;TCompare&gt;() method allows searching for this UiElement by name within the generated collections, which can included Templates stored as static resources.<br>
+<br>
+To use this assembly, simply reference my static class helper using the built-in static methods. Currently, my static class helper contains only 2 methods, with 1 overload method;</p>
+<ol>
+<li><strong>FindCollectionVisualItem</strong>&lt;TCompare&gt;(ItemsControl, object, string)
+</li><li><strong>FindCollectionVisualItem</strong>&lt;TCompare&gt;(ItemsControl, index, string) = OVERLOAD Method
+</li><li><strong>FindVisualItem</strong>&lt;TCompare&gt;((DependencyObject, string) </li></ol>
+<p><br>
+As a side note, my helper uses the .Net <strong>VisualTreeHelper</strong> class in a recursive method call to locate UiElements. Furthermore, my helper uses the ItemsControl's
+<strong>ItemContainerGenerator()</strong> method call in order to locate <u>generated</u> items.
+<br>
+<br>
+For more information on <u>generated</u> items, see the following website which I used as reference for my assembly;
+<a href="http://stackoverflow.com/questions/16375375/how-do-i-access-a-control-inside-a-xaml-datatemplate">
+http://stackoverflow.com/questions/16375375/how-do-i-access-a-control-inside-a-xaml-datatemplate</a>.<br>
+<br>
+Thanks,<br>
+Ben Scharbach<br>
+<br>
+<br>
+</p>
+</div><div class="ClearBoth"></div>
